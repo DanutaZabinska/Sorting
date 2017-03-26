@@ -1,23 +1,23 @@
 package Sorting.Sorting;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class ListSort {
+public class ListSort <T extends Comparable<T>> {
 
-	private ArrayList<Integer> list;
+	private List<T> list;
 
-	public ListSort(ArrayList<Integer> list) {
+	public ListSort(List<T> list) {
 
 		this.list = list;
 	}
 
-	public ArrayList<Integer> bubbleSort() {
+	public 	List<T> bubbleSort() {
 		
-			for (int l = 0; l < list.size()-1; l++) {
+			for (int w = 0; w < list.size()-1; w++) {
 				for (int i = 0; i < list.size()-1; i++) {
 
 					if (list.get(i).compareTo(list.get(i + 1)) > 0) {
-						Integer temp=list.get(i);
+						T temp=list.get(i);
 						list.set(i, list.get(i + 1));
 						list.set(i + 1, temp);
 					}
@@ -29,14 +29,14 @@ public class ListSort {
 
 	}
 
-	public ArrayList<Integer> sortByChoice() {
+	public List<T> sortByChoice() {
 
 			for (int i = 0; i <= list.size() - 1; i++) {
 				
 				Integer min = i;
 				for (int j = i + 1; j <= list.size() - 1; j++) {
 					if (list.get(min).compareTo(list.get(j)) > 0) {
-						Integer temp = list.get(min);
+						T temp = list.get(min);
 						list.set(min, list.get(j));
 						list.set(j, temp);
 					}
@@ -46,15 +46,15 @@ public class ListSort {
 		
 		return list;
 	}
-	public ArrayList<Integer> sortByChoiceDecent() {
+	public List<T> sortByChoiceDecent() {
 
 		
 
 			for (int i = 0; i < list.size() - 1; i++) {
-				Integer max = i;
+				int max = i;
 				for (int j = i + 1; j <= list.size() - 1; j++) {
 					if (list.get(max).compareTo(list.get(j)) < 0) {
-						Integer temp = list.get(max);
+						T temp = list.get(max);
 						list.set(max, list.get(j));
 						list.set(j, temp);
 					}
