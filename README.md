@@ -1,2 +1,2 @@
 # Sorting
-Sorting Unit tests for different sort methods.
+Using JUnit tests for different sort methods.
